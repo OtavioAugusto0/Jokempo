@@ -17,6 +17,15 @@ namespace Estudo7
             InitializeComponent();
         }
 
+        private void zerarSemMessage()
+        {
+            Lbl_escolhaMaquina.Text = "";
+            Lbl_escolhaUsuario.Text = "";
+            Lbl_resultado.Text = "";
+            Lbl_pontuacaoMaquina.Text = "0";
+            Lbl_pontuacaoUsuario.Text = "0";
+        }
+
         private void DesabilitarBotoes()
         {
             Btn_pedra.Enabled = false;
@@ -64,7 +73,7 @@ namespace Estudo7
             if(int.Parse(Lbl_pontuacaoUsuario.Text) == 3)
             {
                 MessageBox.Show("Parabéns! Você venceu o jogo!");
-                Btn_zerar_Click(sender, e);
+                zerarSemMessage();
                 Lbl_vitoriasUsuario.Text = (int.Parse(Lbl_vitoriasUsuario.Text) + 1).ToString();
                 HabilitarBotoes();
 
@@ -72,7 +81,7 @@ namespace Estudo7
             else if (int.Parse(Lbl_pontuacaoMaquina.Text) == 3)
             {
                 MessageBox.Show("Que pena! A máquina venceu o jogo!");
-                Btn_zerar_Click(sender, e);
+                zerarSemMessage();
                 Lbl_vitoriasMaquina.Text = (int.Parse(Lbl_vitoriasMaquina.Text) + 1).ToString();
                 HabilitarBotoes();
 
@@ -111,7 +120,7 @@ namespace Estudo7
             if (int.Parse(Lbl_pontuacaoUsuario.Text) == 3)
             {
                 MessageBox.Show("Parabéns! Você venceu o jogo!");
-                Btn_zerar_Click(sender, e);
+                zerarSemMessage();
                 Lbl_vitoriasUsuario.Text = (int.Parse(Lbl_vitoriasUsuario.Text) + 1).ToString();
                 HabilitarBotoes();
 
@@ -119,7 +128,7 @@ namespace Estudo7
             else if (int.Parse(Lbl_pontuacaoMaquina.Text) == 3)
             {
                 MessageBox.Show("Que pena! A máquina venceu o jogo!");
-                Btn_zerar_Click(sender, e);
+                zerarSemMessage();
                 Lbl_vitoriasMaquina.Text = (int.Parse(Lbl_vitoriasMaquina.Text) + 1).ToString();
                 HabilitarBotoes();
 
@@ -158,7 +167,7 @@ namespace Estudo7
             if (int.Parse(Lbl_pontuacaoUsuario.Text) == 3)
             {
                 MessageBox.Show("Parabéns! Você venceu o jogo!");
-                Btn_zerar_Click(sender, e);
+                zerarSemMessage();
                 Lbl_vitoriasUsuario.Text = (int.Parse(Lbl_vitoriasUsuario.Text) + 1).ToString();
                 HabilitarBotoes();
 
@@ -166,7 +175,7 @@ namespace Estudo7
             else if (int.Parse(Lbl_pontuacaoMaquina.Text) == 3)
             {
                 MessageBox.Show("Que pena! A máquina venceu o jogo!");
-                Btn_zerar_Click(sender, e);
+                zerarSemMessage();
                 Lbl_vitoriasMaquina.Text = (int.Parse(Lbl_vitoriasMaquina.Text) + 1).ToString();
                 HabilitarBotoes();
             }
@@ -187,17 +196,18 @@ namespace Estudo7
 
         private void Btn_zerar_Click(object sender, EventArgs e)
         {
-            Lbl_escolhaMaquina.Text = "";
-            Lbl_escolhaUsuario.Text = "";
-            Lbl_resultado.Text = "";
-            Lbl_pontuacaoMaquina.Text = "0";
-            Lbl_pontuacaoUsuario.Text = "0";
-            //Lbl_vitoriasUsuario.Text = "0";
-            //Lbl_vitoriasMaquina.Text = "0";
+            //Lbl_escolhaMaquina.Text = "";
+            //Lbl_escolhaUsuario.Text = "";
+            //Lbl_resultado.Text = "";
+            //Lbl_pontuacaoMaquina.Text = "0";
+            //Lbl_pontuacaoUsuario.Text = "0";
 
-            DialogResult result = MessageBox.Show("A pontuação desta rodada será zerada, você tem certeza?", "Zerar Rodada");
+            DialogResult result = MessageBox.Show("A pontuação desta rodada será zerada, você tem certeza?", "Zerar Rodada",MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
+                Lbl_escolhaMaquina.Text = "";
+                Lbl_escolhaUsuario.Text = "";
+                Lbl_resultado.Text = "";
                 Lbl_pontuacaoMaquina.Text = "0";
                 Lbl_pontuacaoUsuario.Text = "0";
             }
